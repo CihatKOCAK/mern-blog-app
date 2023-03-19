@@ -2,9 +2,9 @@ import Header from "../../components/header/Header";
 import Posts from "../../components/posts/Posts";
 import Sidebar from "../../components/sidebar/Sidebar";
 
-import "./home.css";
+import "./homePage.css";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <Header />
