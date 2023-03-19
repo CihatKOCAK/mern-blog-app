@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./notFound.css";
 
 function NotFound() {
@@ -17,7 +18,7 @@ function NotFound() {
         </h1>
         <h3 className="fadeIn">PAGE NOT FOUND</h3>
         <button className="btnBackToHome" type="button" name="button">
-          Return To Home
+          <Link to="/">Back to Home</Link>
         </button>
       </div>
     </div>

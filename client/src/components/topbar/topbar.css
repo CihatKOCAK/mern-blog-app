@@ -62,3 +62,9 @@
     cursor: pointer;
     margin-left: 15px;
 }
+
+.topSearchIcon:hover{
+    color: #555;
+    scale: 1.1;
+}
+
