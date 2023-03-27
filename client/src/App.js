@@ -7,10 +7,11 @@ import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/notFound/NotFound";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { Context } from "./context/Context";
 
 function App() {
-  const currentUser = true;
+  const { user } = useContext(Context);
   //pathController -> change the path to the top of the page
   useEffect(() => {
     const pathController = () => {
@@ -19,7 +20,7 @@ function App() {
     pathController();
     return () => {
       pathController();
-    }
+    };
   }, []);
 
   return (
@@ -27,10 +28,10 @@ function App() {
       <TopBar />
       <Routes>
         <Route exact path="/" element={<Homepage />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/write" element={<Write />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/register" element={user ? <Homepage /> : <Register />} />
+        <Route path="/login" element={user ? <Homepage /> : <Login />} />
+        <Route path="/write" element={user ? <Write /> : <Register />} />
+        <Route path="/settings" element={user ? <Settings /> : <Register />} />
         <Route path="/post/:postId" element={<Single />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

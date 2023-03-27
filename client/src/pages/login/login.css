@@ -52,8 +52,18 @@
   transition: all 0.5s ease-out;
 }
 
+.loginButton:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+}
+
 .loginButton:hover {
   background-position: left bottom;
+}
+
+.disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
 }
 
 .loginRegisterButton {
