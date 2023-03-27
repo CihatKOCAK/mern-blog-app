@@ -7,9 +7,21 @@ import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/notFound/NotFound";
+import { useEffect } from "react";
 
 function App() {
   const currentUser = true;
+  //pathController -> change the path to the top of the page
+  useEffect(() => {
+    const pathController = () => {
+      window.scrollTo(0, 0);
+    };
+    pathController();
+    return () => {
+      pathController();
+    }
+  }, []);
+
   return (
     <Router>
       <TopBar />
