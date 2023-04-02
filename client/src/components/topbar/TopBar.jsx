@@ -7,6 +7,7 @@ export default function TopBar() {
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   }
+  const PF = "http://localhost:5000/images/";
   return (
     <div className="top">
       <div className="topLeft">
@@ -37,7 +38,7 @@ export default function TopBar() {
           <Link className="link" to="/settings">
             <img
               className="topImg"
-              src={user.profilePicture ? user.profilePicture : "https://i.imgur.com/6VBx3io.png"}
+              src={user.profilePicture ? PF+user.profilePicture : "https://i.imgur.com/6VBx3io.png"}
               alt=""
             />
           </Link>
